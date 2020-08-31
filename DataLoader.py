@@ -1,10 +1,15 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Aug 25 16:15:25 2020
+
+@author: ivis
+"""
 import torch
 import numpy as np
 import pandas as pd
 from torch.utils import data
 from PIL import Image
 from torchvision import transforms
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def getData(mode):
     if mode == 'train':
@@ -61,12 +66,13 @@ class DataLoader(data.Dataset):
         img = img.resize((64, 64),Image.ANTIALIAS)
         
         ##step2
-        GroundTruth = 1 if self.label[index] >= 1 else 0
+        GroundTruth = self.label[index]
         
         ##step3
         img_np = np.asarray(img)/255
         img_np = np.transpose(img_np, (2,0,1))
-        img_ten = torch.from_numpy(img_np)
         
         ##step4
-        return img_ten, GroundTruth
+        return img_np, GroundTruth
+    def __getlabel__(self):
+        return self.label
