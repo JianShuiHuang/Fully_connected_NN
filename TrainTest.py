@@ -63,15 +63,18 @@ def Test( test_data, test_label, model, BatchSize):
         x_test = torch.from_numpy(test_data[l:r])
         x_test = x_test.to(device)
         x_test = Variable(x_test)
+        y_test = torch.from_numpy(test_data[l:r])
+        y_test = x_test.to(device)
+        y_test = Variable(x_test)
             
         prediction = model(x_test.float())
             
         for k in range(l, r):
-            if (prediction[k-l][0] > prediction[k-l][1]) and (test_label[k] == 0):
+            if (prediction[k-l][0] > prediction[k-l][1]) and (y_test[k] == 0):
                 true = true + 1
-            elif (prediction[k-l][0] > prediction[k-l][1]) and (test_label[k] == 1):
+            elif (prediction[k-l][0] > prediction[k-l][1]) and (y_test[k] == 1):
                 false = false + 1
-            elif (prediction[k-l][0] <= prediction[k-l][1]) and (test_label[k] == 1):
+            elif (prediction[k-l][0] <= prediction[k-l][1]) and (y_test[k] == 1):
                 true = true + 1
             else:
                 false = false + 1
