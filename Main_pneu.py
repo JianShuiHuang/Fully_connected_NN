@@ -23,7 +23,7 @@ Momentum = 0.9
 Weight_decay = 5e-4
 in_feature = 3 * 64 * 64
 out_feature = 1000
-
+"""
 train_data, train_label = dataLoader('train')
 test_data, test_label = dataLoader('test')
 
@@ -31,13 +31,13 @@ np.save("Pneunomia_train_data.npy", train_data)
 np.save("Pneunomia_train_label.npy", train_label)
 np.save("Pneunomia_test_data.npy", test_data)
 np.save("Pneunomia_test_label.npy", test_label)
-
 """
+
 train_data = np.load("Pneunomia_train_data.npy")
 train_label = np.load("Pneunomia_train_label.npy")
 test_data = np.load("Pneunomia_test_data.npy")
 test_label = np.load("Pneunomia_test_label.npy")
-"""
+
 
 print("data load complet...")
  
