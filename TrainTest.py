@@ -27,7 +27,7 @@ def Train(train_data, train_label, model, optimizer, BatchSize):
         prediction = model(x_train.float())
         
         print(type(prediction))
-        print(prediction)
+        print(prediction.size())
         
         for k in range(l, r):
             if (prediction[k-l][0] > prediction[k-l][1]) and (train_label[k] == 0):
