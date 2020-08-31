@@ -27,11 +27,11 @@ def Train(train_data, train_label, model, optimizer, BatchSize):
         prediction = model(x_train.float())
         
         for k in range(l, r):
-            if (prediction[k-l][0] > prediction[k-l][1]) and (y_train[k] == 0):
+            if (prediction[k-l][0] > prediction[k-l][1]) and (train_label[k] == 0):
                 true = true + 1
-            elif (prediction[k-l][0] > prediction[k-l][1]) and (y_train[k] == 1):
+            elif (prediction[k-l][0] > prediction[k-l][1]) and (train_label[k] == 1):
                 false = false + 1
-            elif (prediction[k-l][0] <= prediction[k-l][1]) and (y_train[k] == 1):
+            elif (prediction[k-l][0] <= prediction[k-l][1]) and (train_label[k] == 1):
                 true = true + 1
             else:
                 false = false + 1
@@ -43,7 +43,7 @@ def Train(train_data, train_label, model, optimizer, BatchSize):
         
     return true / (true + false)
 
-def Test( test_data, test_label, model, optimizer, BatchSize):
+def Test( test_data, test_label, model, BatchSize):
     ##testing
     model.eval()
     true = 0
