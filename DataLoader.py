@@ -10,6 +10,7 @@ import pandas as pd
 from torch.utils import data
 from PIL import Image
 from torchvision import transforms
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def getData(mode):
     if mode == 'train':
