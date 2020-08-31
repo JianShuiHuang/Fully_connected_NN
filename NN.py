@@ -20,6 +20,6 @@ class fully_connected(nn.Module):
     def forward(self, x):
         y = self.linear_1(x)
         y = self.activ_1(y)
-	y = self.linear_2(y)
-	
+        y = self.linear_2(y)
+		
         return y
