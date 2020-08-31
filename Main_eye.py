@@ -28,7 +28,7 @@ BatchSize = 4
 Epochs = 10
 Momentum = 0.9     
 Weight_decay = 5e-4
-in_feature = 3 * 64 * 64
+in_feature =  64
 out_feature = 1000
 """
 transformations = transforms.Compose([transforms.ToTensor()])
@@ -75,12 +75,7 @@ test_label = np.load("Retinopathy_test_label.npy")
 
 print("data load complet...")
 
-print(train_data.shape)
-print(train_label.shape)
 
-print(train_label)
-
-"""
 train_accuracy = []
 test_accuracy = []
     
@@ -105,7 +100,7 @@ print("Time: ", timeSince(start, 1 / 100))
 
 print('Max accuracy: ', max(test_accuracy))
 print("model complet...")
-"""
+
     
     
     
