@@ -24,7 +24,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 ##Hyper parameters
 lr = 1e-03
-BatchSize = 4
+BatchSize = 1
 Epochs = 10
 Momentum = 0.9     
 Weight_decay = 5e-4
