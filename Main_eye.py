@@ -74,7 +74,13 @@ test_data = np.load("Retinopathy_test_data.npy")
 test_label = np.load("Retinopathy_test_label.npy")
 
 print("data load complet...")
- 
+
+print(train_data.shape)
+print(train_label.shape)
+
+print(train_label)
+
+"""
 train_accuracy = []
 test_accuracy = []
     
@@ -99,7 +105,7 @@ print("Time: ", timeSince(start, 1 / 100))
 
 print('Max accuracy: ', max(test_accuracy))
 print("model complet...")
-    
+"""
     
     
     
