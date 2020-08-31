@@ -22,5 +22,5 @@ class fully_connected(nn.Module):
         y = self.activ_1(y)
 	y = y.view(y.size(0), -1)
         y = self.linear_2(y)
-		
+	
         return y
