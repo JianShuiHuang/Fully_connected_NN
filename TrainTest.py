@@ -22,8 +22,8 @@ def Train(train_data, train_label, model, optimizer, BatchSize):
             r = len(train_data)
         
         
-        x_train = torch.from_numpy(train_data[l:r]
-        y_train = torch.from_numpy(train_label[l:r]
+        x_train = torch.from_numpy(train_data[l:r])
+        y_train = torch.from_numpy(train_label[l:r])
         x_train = x_train.to(device)
         y_train = y_train.to(device)
         x_train = Variable(x_train)
@@ -60,7 +60,9 @@ def Test( test_data, test_label, model, BatchSize):
         if(r > len(test_data)):
             r = len(test_data)
         
-        x_test = Variable(torch.from_numpy(test_data[l:r]))
+        x_test = torch.from_numpy(test_data[l:r])
+        x_test = x_test.to(device)
+        x_test = Variable(x_test)
             
         prediction = model(x_test.float())
             
