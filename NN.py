@@ -10,7 +10,7 @@ class fully_connected(nn.Module):
         self.out_feature = out_feature
         
         ##layer 1
-        self.linear_1 = nn.Linear(in_features=in_feature, out_features=self.out_feature, bias=True)
+        self.linear_1 = nn.Linear(in_features=in_feature, out_features=self.out_feature, bias=False)
         self.activ_1 = nn.Sigmoid()
         
         ##layer 2
