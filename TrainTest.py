@@ -24,9 +24,10 @@ def Train(train_data, train_label, model, optimizer, BatchSize):
         x_train = Variable(torch.from_numpy(train_data[l:r]))
         y_train = Variable(torch.from_numpy(train_label[l:r]))
             
-        prediction = model(x_train)
+        prediction = model(x_train.float())
         
-        
+        print(type(prediction))
+        print(np.array(prediction).shape)
         
         for k in range(l, r):
             if (prediction[k-l][0] > prediction[k-l][1]) and (train_label[k] == 0):
