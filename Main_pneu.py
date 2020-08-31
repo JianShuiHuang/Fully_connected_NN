@@ -22,7 +22,7 @@ Epochs = 10
 Momentum = 0.9     
 Weight_decay = 5e-4
 in_feature = 3 * 64 * 64
-out_feature = 15
+out_feature = 30
 """
 train_data, train_label = dataLoader('train')
 test_data, test_label = dataLoader('test')
