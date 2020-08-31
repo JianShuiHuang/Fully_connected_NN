@@ -11,13 +11,15 @@ class fully_connected(nn.Module):
         
         ##layer 1
         self.linear_1 = nn.Linear(in_features=in_feature, out_features=self.out_feature, bias=True)
+        self.activ_1 = nn.Sigmoid()
         
         ##layer 2
-        self.linear_2 = nn.Linear(in_features=self.out_feature, out_features=2, bias=True)
+        self.linear_2 = nn.Linear(in_features=self.out_feature, out_features=2, bias=False)
                 
     ##forwarding and backpropagation
     def forward(self, x):
         y = self.linear_1(x)
+        y = self.activ_1(y)
         y = self.linear_2(y)
 		
         return y
