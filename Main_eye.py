@@ -28,8 +28,8 @@ BatchSize = 4
 Epochs = 10
 Momentum = 0.9     
 Weight_decay = 5e-4
-in_feature =  64
-out_feature = 1000
+in_feature =  3 * 64 * 64
+out_feature = 100
 """
 transformations = transforms.Compose([transforms.ToTensor()])
 train_np = DataLoader('data/', 'train', transformations)
