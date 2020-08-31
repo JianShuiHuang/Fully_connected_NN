@@ -30,7 +30,7 @@ Momentum = 0.9
 Weight_decay = 5e-4
 in_feature = 3 * 64 * 64
 out_feature = 1000
-
+"""
 transformations = transforms.Compose([transforms.ToTensor()])
 train_np = DataLoader('data/', 'train', transformations)
 test_np = DataLoader('data/', 'test', transformations)
@@ -41,7 +41,7 @@ input_size = train_np[0][0].shape[0] * train_np[0][0].shape[1] * train_np[0][0].
 output_size = 5
 hidden_size = 1000    
     
-"""
+    
 train_data = np.zeros((num_images_train, input_size))
 train_label = np.zeros(num_images_train)
 for i in range(num_images_train):
@@ -64,7 +64,7 @@ for i in range(num_images_test):
 
 np.save("Retinopathy_test_data.npy", test_data)
 np.save("Retinopathy_test_label.npy", test_label)
-"""
+"""     
     
 
 train_data = np.load("Retinopathy_train_data.npy")
