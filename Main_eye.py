@@ -89,7 +89,7 @@ start = time.time()
 for i in range(Epochs):
     train = Train(train_data, train_label, model, optimizer, BatchSize)
     train_accuracy.append(train)
-    test = Test(test_data, test_label, model, Epochs, BatchSize)
+    test = Test(test_data, test_label, model, BatchSize)
     test_accuracy.append(test)
     print("epochs:", i )
     print('Train Accuracy: ', train)
