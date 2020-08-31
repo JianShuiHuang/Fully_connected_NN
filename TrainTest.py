@@ -10,7 +10,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def Train(train_data, train_label, model, optimizer, BatchSize):
     ##training
-    model.train()
+    model.train() 
     true = 0
     false = 0
     Loss = nn.CrossEntropyLoss()   #change loss function here
@@ -20,14 +20,16 @@ def Train(train_data, train_label, model, optimizer, BatchSize):
         r = j * BatchSize + BatchSize
         if(r > len(train_data)):
             r = len(train_data)
-            
-        x_train = Variable(torch.from_numpy(train_data[l:r]))
-        y_train = Variable(torch.from_numpy(train_label[l:r]))
+        
+        
+        x_train = torch.from_numpy(train_data[l:r]
+        y_train = torch.from_numpy(train_label[l:r]
+        x_train = x_train.to(device)
+        y_train = y_train.to(device)
+        x_train = Variable(x_train)
+        y_train = Variable(y_train)
             
         prediction = model(x_train.float())
-        
-        print(type(prediction))
-        print(prediction.size())
         
         for k in range(l, r):
             if (prediction[k-l][0] > prediction[k-l][1]) and (train_label[k] == 0):
