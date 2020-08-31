@@ -65,7 +65,7 @@ for i in range(num_images_test):
 
 np.save("Retinopathy_test_data.npy", test_data)
 np.save("Retinopathy_test_label.npy", test_label)
-"""  
+"""
     
 
 train_data = np.load("Retinopathy_train_data.npy")
