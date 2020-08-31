@@ -67,11 +67,11 @@ def Test( test_data, test_label, model, BatchSize):
         prediction = model(x_test.float())
             
         for k in range(l, r):
-            if (prediction[k-l][0] > prediction[k-l][1]) and (test_data[k] == 0):
+            if (prediction[k-l][0] > prediction[k-l][1]) and (test_label[k] == 0):
                 true = true + 1
-            elif (prediction[k-l][0] > prediction[k-l][1]) and (test_data[k] == 1):
+            elif (prediction[k-l][0] > prediction[k-l][1]) and (test_label[k] == 1):
                 false = false + 1
-            elif (prediction[k-l][0] <= prediction[k-l][1]) and (test_data[k] == 1):
+            elif (prediction[k-l][0] <= prediction[k-l][1]) and (test_label[k] == 1):
                 true = true + 1
             else:
                 false = false + 1
